@@ -1,22 +1,21 @@
 {
-	"manifest_version": 2,
-	"name": "No mas bover",
-	"version": "1.0",
-	"author": "Maximiliano D'Amelio, Tomás D'Ortona",
-	"description": "Extensión para ocultar las noticias de bover en el diario Olé.",
-	"icons": {
-		"48": "icon48.png",
-		"128": "icon128.png"
-	},
-	"browser_action": {
-		"default_icon": "icon128.png",
-		"default_title": "Extension Olé",
-		"default_popup": "default_popup.html"
-	},
-	"content_scripts": [{
-		"run_at" :"document_end",
-		"matches": ["https://www.ole.com.ar/*"],
-		"js": ["jquery.js", "site.js"],
-		"css":["style.css"]
-	}]
+  "name": "Olé sin bover",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Oculta todas las noticias de boca y river",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Olé sin bover"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.ole.com.ar/*"],
+      "js": ["contentScript.js"],
+      "permissions": ["scripting"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ]
 }
