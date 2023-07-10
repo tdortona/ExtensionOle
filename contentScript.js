@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   let articles = document.querySelectorAll('article div h3.volanta');
   let articlesBoca = [];
   let articlesRiver = [];
-  
+
   for (let article of articles) {
     if (article.textContent === 'BOCA ' || article.textContent === 'BOCA') {
       articlesBoca.push(article);
@@ -13,9 +13,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
   if (request.action === 'showBoca') {
     for (let article of articlesBoca) {
-
       let divs = article.closest('[class^="div"]').querySelectorAll('div');
-      console.log(divs);
       for (let div of divs) {
         div.style.cssText = div.style.cssText.replace('display: none;', '')
       }

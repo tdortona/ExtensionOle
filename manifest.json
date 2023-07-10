@@ -9,14 +9,19 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.ole.com.ar/*"],
-      "js": ["contentScript.js"],
-      "permissions": ["scripting"]
+      "matches": [
+        "https://www.ole.com.ar/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "permissions": [
+        "scripting"
+      ]
     }
   ],
   "permissions": [
-    "activeTab",
-    "scripting"
+    "activeTab"
   ],
   "icons": {
     "128": "icon.png"
